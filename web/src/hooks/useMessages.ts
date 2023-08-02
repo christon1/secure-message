@@ -2,10 +2,30 @@ import { useQuery, useSubscription } from "@apollo/client";
 import * as queries from "graphql/queries";
 import * as subscriptions from "graphql/subscriptions";
 import { useEffect, useState } from "react";
+import CryptoJS from 'crypto-js';
 
 function compareDate(a: any, b: any) {
   return new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime();
 }
+
+const createMessage = async (chatId: string, text: string) => {
+  // The shared secret key. In a real application, this should be generated and exchanged securely.
+  const secretKey = 'your-secret-key';
+
+  // Encrypt the message text with the secret key.
+  const encryptedText = CryptoJS.AES.encrypt(text, secretKey).toString();
+
+  // Send the encrypted text to the server.
+  const response = await fetch(`/api/chats/${chatId}/messages`, {
+    method: 'POST',
+    body: JSON.stringify({ text: encryptedText }),
+    headers: { 'Content-Type': 'application/json' },
+  });
+  
+  if (!response.ok) {
+    throw new Error('Failed to send message');
+  }
+};
 
 export function useMessagesByChat(
   id: any,
