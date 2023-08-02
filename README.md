@@ -1,6 +1,6 @@
 ## OVERVIEW
 
-Secure-message is a secure web chat platform built with React using end-to-end encryption, command line injection prevention, and authentication technologies.
+Secure-message is a secure web chat platform built with React using end-to-end encryption, command line injection prevention, input validation, and authentication technologies.
 
 (img of user interface)
 
@@ -32,7 +32,4 @@ docker-compose up -d
 ```
 
 
-## LICENSE
-
-MIT License
 
