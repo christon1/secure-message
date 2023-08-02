@@ -1,6 +1,6 @@
 ## OVERVIEW
 
-Secure-message is a secure web chat platform built with React using end-to-end encryption, command line injection prevention, and authentication technologies.
+Simple-message is a secure web chat platform built with React using end-to-end encryption, command line injection prevention, and authentication technologies.
 
 (img of user interface)
 
@@ -25,7 +25,7 @@ Secure-message is a secure web chat platform built with React using end-to-end e
 
 ## INSTALLATION
 
-You can install secure-message by using Docker. Just download the Docker Compose file to your computer and initiate the process.
+You can install simple-message by using Docker. Just download the Docker Compose file to your computer and initiate the process.
 
 ```
 docker-compose up -d
