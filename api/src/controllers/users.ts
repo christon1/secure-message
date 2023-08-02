@@ -20,6 +20,16 @@ export const createUser = async (
   try {
     const { name, email, password } = req.body;
 
+	if (!name || typeof name !== 'string') {
+		throw new Error('Invalid name');
+	}
+	if (!email || typeof email !== 'string' || !email.includes('@')) {
+		throw new Error('Invalid email');
+	}
+	if (!password || typeof password !== 'string') {
+		throw new Error('Invalid password');
+	}
+
     const user = await createGQLUser({
       email,
       password,
